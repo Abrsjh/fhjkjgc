@@ -19,7 +19,7 @@ import {
   MessageCircle,
   Video,
   Microscope,
-  Ambulance,
+  Truck,
   Building,
   CheckCircle,
   ArrowRight,
@@ -85,7 +85,7 @@ const HospitalAdvertisement = () => {
       subtitle: "Life-saving care with 3-minute average response time",
       description: "Advanced trauma center with helicopter emergency services",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      icon: Ambulance,
+      icon: Truck,
       stats: { response: "3min", survival: "95%", coverage: "24/7" }
     }
   ];
