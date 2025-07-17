@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Brain, Eye, Lungs, Activity, Zap } from 'lucide-react';
+import { Heart, Brain, Eye, Wind, Activity, Zap } from 'lucide-react';
 import './InteractiveOrganSystem.css';
 
 const InteractiveOrganSystem = () => {
@@ -37,7 +37,7 @@ const InteractiveOrganSystem = () => {
     {
       id: 'lungs',
       name: 'Respiratory System',
-      icon: Lungs,
+      icon: Wind,
       position: { x: 35, y: 35 },
       color: '#3498db',
       info: {
