@@ -30,11 +30,11 @@ import {
   Bell,
   User
 } from 'lucide-react';
-import ParticleBackground from './ParticleBackground';
-import Medical3DScene from './Medical3DScene';
+// import ParticleBackground from './ParticleBackground';
+// import Medical3DScene from './Medical3DScene';
 import InteractiveOrganSystem from './InteractiveOrganSystem';
 import HolographicDisplay from './HolographicDisplay';
-import AdvancedTestimonials from './AdvancedTestimonials';
+// import AdvancedTestimonials from './AdvancedTestimonials';
 import AIAppointmentBooking from './AIAppointmentBooking';
 import './HospitalAdvertisement.css';
 
@@ -273,9 +273,6 @@ const HospitalAdvertisement = () => {
 
   return (
     <div className="hospital-ad">
-      {/* Particle Background */}
-      <ParticleBackground />
-
       {/* Navigation */}
       <motion.nav
         className="navbar"
@@ -462,8 +459,8 @@ const HospitalAdvertisement = () => {
         </div>
       </section>
 
-      {/* 3D Medical Scene */}
-      <section className="medical-3d-section">
+      {/* Medical Innovation Section */}
+      <section className="medical-innovation-section">
         <div className="container">
           <motion.div
             className="section-header"
@@ -472,10 +469,44 @@ const HospitalAdvertisement = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2>Experience Healthcare in 3D</h2>
-            <p>Interact with our cutting-edge medical visualization</p>
+            <h2>Revolutionary Medical Technology</h2>
+            <p>Experience the future of healthcare with our advanced systems</p>
           </motion.div>
-          <Medical3DScene />
+          <div className="innovation-grid">
+            <motion.div 
+              className="innovation-card"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Brain size={60} className="innovation-icon" />
+              <h3>AI Diagnostics</h3>
+              <p>99.7% accuracy in medical imaging analysis</p>
+            </motion.div>
+            <motion.div 
+              className="innovation-card"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Zap size={60} className="innovation-icon" />
+              <h3>Robotic Surgery</h3>
+              <p>Sub-millimeter precision with da Vinci systems</p>
+            </motion.div>
+            <motion.div 
+              className="innovation-card"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Video size={60} className="innovation-icon" />
+              <h3>Telemedicine</h3>
+              <p>24/7 virtual consultations with specialists</p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -552,8 +583,49 @@ const HospitalAdvertisement = () => {
         </div>
       </motion.section>
 
-      {/* Advanced Testimonials */}
-      <AdvancedTestimonials />
+      {/* Patient Success Stories */}
+      <section className="success-stories-section">
+        <div className="container">
+          <motion.div
+            className="section-header"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2>Life-Changing Success Stories</h2>
+            <p>Real patients, real results, real transformations</p>
+          </motion.div>
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                className="testimonial-card-simple"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <div className="testimonial-header">
+                  <img src={testimonial.image} alt={testimonial.name} className="patient-photo" />
+                  <div className="patient-info">
+                    <h4>{testimonial.name}</h4>
+                    <p>{testimonial.role}</p>
+                    <div className="rating">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} size={16} fill="#ffd700" color="#ffd700" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <blockquote>"{testimonial.quote}"</blockquote>
+                <div className="procedure-tag">{testimonial.procedure}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* AI Appointment Booking */}
       <AIAppointmentBooking />
