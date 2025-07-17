@@ -1,0 +1,19 @@
+{
+  "glyphs": {},
+  "familyName": "helvetiker",
+  "ascender": 1,
+  "descender": 0,
+  "underlinePosition": 0,
+  "underlineThickness": 0,
+  "boundingBox": {
+    "yMin": 0,
+    "xMin": 0,
+    "yMax": 1,
+    "xMax": 1
+  },
+  "resolution": 1000,
+  "original_font_information": {
+    "format": 0,
+    "copyright": "Helvetiker font placeholder"
+  }
+}
